@@ -1,0 +1,82 @@
+
+{% extends "base.html" %}
+
+{% block title %}{{ concept.title }} | LearnPilot AI{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/concept_library.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="detail-container">
+
+    <a href="{{ url_for('physics_library') }}" class="back-link">
+        ← Back to Physics Library
+    </a>
+
+    <div class="detail-header">
+        <p class="eyebrow">PHYSICS • ELECTRICITY</p>
+
+        <h1>{{ concept.title }}</h1>
+
+        <span class="difficulty">
+            {{ concept.difficulty }}
+        </span>
+
+        <p>{{ concept.description }}</p>
+    </div>
+
+    <div class="detail-card">
+        <h2>📐 Important Formula</h2>
+
+        <div class="large-formula">
+            {{ concept.formula }}
+        </div>
+
+        <p>
+            SI Unit: <strong>{{ concept.si_unit }}</strong>
+        </p>
+    </div>
+
+    <div class="detail-card">
+        <h2>📖 Formula Variables</h2>
+
+        <ul class="detail-list">
+            {% for variable in concept.variables %}
+                <li>{{ variable }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="detail-card">
+        <h2>💡 Example</h2>
+
+        <p>{{ concept.example }}</p>
+    </div>
+
+    <div class="detail-card">
+        <h2>⭐ Important Points</h2>
+
+        <ul class="detail-list">
+            {% for point in concept.key_points %}
+                <li>{{ point }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="practice-banner">
+        <div>
+            <h2>Check your understanding</h2>
+            <p>Attempt practice questions from the Electricity chapter.</p>
+        </div>
+
+        <a href="{{ url_for('physics_questions') }}" class="card-button">
+            Practice Questions →
+        </a>
+    </div>
+
+</div>
+
+{% endblock %}

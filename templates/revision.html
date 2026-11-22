@@ -1,0 +1,164 @@
+
+{% extends "base.html" %}
+
+{% block title %}Revision Schedule | LearnPilot AI{% endblock %}
+
+{% block content %}
+
+<div class="revision-page">
+
+    <div class="revision-header">
+        <h1>🔄 Revision Schedule</h1>
+        <p>Plan your revisions, strengthen your concepts and improve your learning.</p>
+    </div>
+
+    <!-- ADD REVISION TASK -->
+
+    <div class="revision-card">
+
+        <h2>➕ Add New Revision</h2>
+
+        <form method="POST" action="{{ url_for('add_revision') }}">
+
+            <div class="revision-form-group">
+                <label for="concept_id">Select Physics Concept</label>
+
+                <select name="concept_id" id="concept_id" required>
+                    <option value="">Choose a concept</option>
+
+                    {% for concept in concepts %}
+                    <option value="{{ concept.id }}">
+                        {{ concept.name }}
+                    </option>
+                    {% endfor %}
+
+                </select>
+            </div>
+
+            <div class="revision-form-group">
+                <label for="revision_date">Choose Revision Date</label>
+
+                <input
+                    type="date"
+                    name="revision_date"
+                    id="revision_date"
+                    required
+                >
+            </div>
+
+            <button type="submit" class="revision-button">
+                Add Revision Task
+            </button>
+
+        </form>
+
+    </div>
+
+    <!-- PENDING TASKS -->
+
+    <div class="revision-card">
+
+        <h2>📅 Pending Revisions</h2>
+
+        {% if pending_tasks %}
+
+            <div class="revision-task-list">
+
+                {% for task in pending_tasks %}
+
+                <div class="revision-task">
+
+                    <div class="revision-task-info">
+                        <h3>{{ task.concept.name }}</h3>
+
+                        <p>
+                            Revision Date:
+                            {{ task.revision_date.strftime('%d %B %Y') }}
+                        </p>
+
+                        <span class="revision-pending">
+                            Pending
+                        </span>
+                    </div>
+
+                    <form
+                        method="POST"
+                        action="{{ url_for('complete_revision', task_id=task.id) }}"
+                    >
+                        <button
+                            type="submit"
+                            class="revision-complete-button"
+                        >
+                            ✓ Mark Completed
+                        </button>
+                    </form>
+
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+        {% else %}
+
+            <div class="revision-empty">
+                <h3>🎉 No Pending Revisions</h3>
+                <p>You are all caught up! Add a new revision task to continue learning.</p>
+            </div>
+
+        {% endif %}
+
+    </div>
+
+    <!-- COMPLETED TASKS -->
+
+    <div class="revision-card">
+
+        <h2>✅ Completed Revisions</h2>
+
+        {% if completed_tasks %}
+
+            <div class="revision-task-list">
+
+                {% for task in completed_tasks %}
+
+                <div class="revision-task completed-task">
+
+                    <div class="revision-task-info">
+                        <h3>{{ task.concept.name }}</h3>
+
+                        <p>
+                            Revision Date:
+                            {{ task.revision_date.strftime('%d %B %Y') }}
+                        </p>
+
+                        <span class="revision-done">
+                            Completed
+                        </span>
+                    </div>
+
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+        {% else %}
+
+            <div class="revision-empty">
+                <p>No completed revisions yet. Keep learning!</p>
+            </div>
+
+        {% endif %}
+
+    </div>
+
+    <div class="revision-back">
+        <a href="{{ url_for('dashboard') }}">
+            ← Back to Dashboard
+        </a>
+    </div>
+
+</div>
+
+{% endblock %}

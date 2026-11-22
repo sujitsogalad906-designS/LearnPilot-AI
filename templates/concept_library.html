@@ -1,0 +1,94 @@
+
+{% extends "base.html" %}
+
+{% block title %}Physics Library | LearnPilot AI{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/concept_library.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<section class="library-header">
+    <p class="eyebrow">YOUR PERSONALIZED LEARNING SPACE</p>
+    <h1>Physics Concept Library 📚</h1>
+
+    <p>
+        Explore concepts, understand formulas and strengthen
+        your Physics fundamentals.
+    </p>
+
+    <div class="library-stats">
+        <div class="stat-card">
+            <h2>{{ physics.concepts|length }}</h2>
+            <p>Total Concepts</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>{{ physics.class }}</h2>
+            <p>Class</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>{{ physics.chapter }}</h2>
+            <p>Chapter</p>
+        </div>
+    </div>
+</section>
+
+<section class="concept-section">
+
+    <div class="section-heading">
+        <h2>Electricity – Concept Collection</h2>
+        <p>Select a concept to explore its explanation and formula.</p>
+    </div>
+
+    <div class="concept-grid">
+
+        {% for concept in physics.concepts %}
+
+        <div class="concept-card">
+
+            <div class="concept-number">
+                CONCEPT {{ concept.id }}
+            </div>
+
+            <h3>{{ concept.title }}</h3>
+
+            <p>{{ concept.description }}</p>
+
+            <div class="formula-box">
+                {{ concept.formula }}
+            </div>
+
+            <div class="concept-footer">
+                <span class="difficulty">
+                    {{ concept.difficulty }}
+                </span>
+
+                <a href="{{ url_for('physics_concept', concept_id=concept.id) }}">
+                    Learn More →
+                </a>
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+<div class="practice-banner">
+    <div>
+        <h2>Ready to test your knowledge?</h2>
+        <p>Practice with Physics MCQs and check your understanding.</p>
+    </div>
+
+    <a href="{{ url_for('physics_questions') }}" class="card-button">
+        Start Practice →
+    </a>
+</div>
+
+{% endblock %}

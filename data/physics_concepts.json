@@ -1,0 +1,184 @@
+
+{
+  "subject": "Physics",
+  "class": "10",
+  "chapter": "Electricity",
+  "chapter_number": 1,
+  "description": "Understand electric current, voltage, resistance, circuits and electrical power.",
+  "concepts": [
+    {
+      "id": 1,
+      "title": "Electric Current",
+      "difficulty": "Easy",
+      "description": "Electric current is the rate of flow of electric charge through a conductor.",
+      "formula": "I = Q / t",
+      "variables": {
+        "I": "Electric current",
+        "Q": "Electric charge",
+        "t": "Time"
+      },
+      "si_unit": "Ampere (A)",
+      "example": "If 10 coulombs of charge flow through a wire in 2 seconds, the current is 10 / 2 = 5 A.",
+      "key_points": [
+        "Current is the flow of electric charge.",
+        "Its SI unit is Ampere.",
+        "An ammeter measures electric current."
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Electric Potential Difference",
+      "difficulty": "Easy",
+      "description": "Potential difference is the work done per unit charge to move a charge between two points.",
+      "formula": "V = W / Q",
+      "variables": {
+        "V": "Potential difference",
+        "W": "Work done",
+        "Q": "Electric charge"
+      },
+      "si_unit": "Volt (V)",
+      "example": "If 20 joules of work moves 5 coulombs of charge, the potential difference is 20 / 5 = 4 V.",
+      "key_points": [
+        "Potential difference drives electric current.",
+        "Its SI unit is Volt.",
+        "A voltmeter measures potential difference."
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Ohm's Law",
+      "difficulty": "Medium",
+      "description": "At constant temperature, the current flowing through a conductor is directly proportional to the potential difference across it.",
+      "formula": "V = I × R",
+      "variables": {
+        "V": "Potential difference",
+        "I": "Electric current",
+        "R": "Resistance"
+      },
+      "si_unit": "Volt (V)",
+      "example": "If current is 2 A and resistance is 5 ohms, voltage = 2 × 5 = 10 V.",
+      "key_points": [
+        "Voltage is directly proportional to current.",
+        "Resistance remains constant under constant physical conditions.",
+        "The V-I graph is a straight line for an ohmic conductor."
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Resistance",
+      "difficulty": "Medium",
+      "description": "Resistance is the opposition offered by a conductor to the flow of electric current.",
+      "formula": "R = V / I",
+      "variables": {
+        "R": "Resistance",
+        "V": "Potential difference",
+        "I": "Electric current"
+      },
+      "si_unit": "Ohm (Ω)",
+      "example": "A conductor has 12 V across it and carries 3 A current. Its resistance is 12 / 3 = 4 Ω.",
+      "key_points": [
+        "Resistance opposes current flow.",
+        "Resistance depends on length, area, material and temperature.",
+        "Its SI unit is Ohm."
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Resistivity",
+      "difficulty": "Medium",
+      "description": "Resistivity is a property of a material that describes how strongly it opposes electric current.",
+      "formula": "R = ρL / A",
+      "variables": {
+        "R": "Resistance",
+        "ρ": "Resistivity",
+        "L": "Length of conductor",
+        "A": "Cross-sectional area"
+      },
+      "si_unit": "Ohm metre (Ω m)",
+      "example": "For a wire of resistivity 2 Ω m, length 3 m and area 2 m², resistance = (2 × 3) / 2 = 3 Ω.",
+      "key_points": [
+        "Resistivity depends on the material.",
+        "Longer wires have greater resistance.",
+        "Thicker wires generally have lower resistance."
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Resistors in Series",
+      "difficulty": "Medium",
+      "description": "When resistors are connected one after another, they form a series combination.",
+      "formula": "R = R1 + R2 + R3",
+      "variables": {
+        "R": "Equivalent resistance",
+        "R1": "First resistance",
+        "R2": "Second resistance",
+        "R3": "Third resistance"
+      },
+      "si_unit": "Ohm (Ω)",
+      "example": "Three resistors of 2 Ω, 3 Ω and 5 Ω connected in series have equivalent resistance of 10 Ω.",
+      "key_points": [
+        "The same current flows through every resistor.",
+        "Total resistance is the sum of individual resistances.",
+        "Equivalent resistance is greater than any individual resistance."
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Resistors in Parallel",
+      "difficulty": "Medium",
+      "description": "When resistors are connected across the same two points, they form a parallel combination.",
+      "formula": "1/R = 1/R1 + 1/R2",
+      "variables": {
+        "R": "Equivalent resistance",
+        "R1": "First resistance",
+        "R2": "Second resistance"
+      },
+      "si_unit": "Ohm (Ω)",
+      "example": "Two resistors of 6 Ω and 3 Ω connected in parallel have equivalent resistance of 2 Ω.",
+      "key_points": [
+        "The voltage across each resistor is the same.",
+        "Current divides among parallel branches.",
+        "Equivalent resistance is less than the smallest individual resistance."
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Electric Power",
+      "difficulty": "Easy",
+      "description": "Electric power is the rate at which electrical energy is consumed or converted.",
+      "formula": "P = V × I",
+      "variables": {
+        "P": "Electric power",
+        "V": "Potential difference",
+        "I": "Electric current"
+      },
+      "si_unit": "Watt (W)",
+      "example": "A device operating at 220 V and drawing 2 A consumes 440 W of power.",
+      "key_points": [
+        "Power measures the rate of energy consumption.",
+        "Its SI unit is Watt.",
+        "Electrical energy is commonly measured in kilowatt-hours."
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Heating Effect of Electric Current",
+      "difficulty": "Medium",
+      "description": "When electric current passes through a resistance, electrical energy is converted into heat energy.",
+      "formula": "H = I²Rt",
+      "variables": {
+        "H": "Heat produced",
+        "I": "Current",
+        "R": "Resistance",
+        "t": "Time"
+      },
+      "si_unit": "Joule (J)",
+      "example": "If 2 A current flows through a 5 Ω resistor for 10 seconds, heat produced = 2² × 5 × 10 = 200 J.",
+      "key_points": [
+        "This is Joule's law of heating.",
+        "Heat increases with the square of current.",
+        "Electric heaters and fuses use the heating effect."
+      ]
+    }
+  ]
+}

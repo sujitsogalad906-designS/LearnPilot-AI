@@ -1,0 +1,476 @@
+
+/* ==========================================
+   LEARNPILOT AI - CONCEPT LIBRARY
+========================================== */
+
+.library-header {
+    text-align: center;
+    padding: 35px 15px;
+}
+
+.eyebrow {
+    color: #6478e8;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.library-header h1,
+.quiz-header h1 {
+    font-size: 32px;
+    margin: 12px 0;
+}
+
+.library-header > p,
+.section-heading p {
+    color: #777;
+}
+
+.library-stats {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 28px;
+}
+
+.stat-card {
+    background: #fff;
+    padding: 18px 28px;
+    border-radius: 12px;
+    min-width: 120px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.stat-card h2 {
+    color: #5268dc;
+    margin: 0;
+}
+
+.stat-card p {
+    margin-bottom: 0;
+    color: #777;
+}
+
+.concept-section {
+    margin-top: 30px;
+}
+
+.section-heading {
+    margin-bottom: 22px;
+}
+
+.concept-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.concept-card,
+.detail-card,
+.quiz-card,
+.result-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.concept-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.concept-number {
+    color: #6577e6;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.concept-card h3 {
+    margin: 0;
+    font-size: 19px;
+}
+
+.concept-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.formula-box,
+.large-formula {
+    background: #f0f3ff;
+    color: #344bb5;
+    padding: 18px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+.concept-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.concept-footer a,
+.back-link {
+    color: #5268dc;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.difficulty {
+    background: #eef0ff;
+    color: #5268dc;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    display: inline-block;
+}
+
+.practice-banner {
+    margin: 35px 0;
+    padding: 28px;
+    border-radius: 14px;
+    background: #eef1ff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.practice-banner p {
+    color: #666;
+}
+
+.card-button {
+    display: inline-block;
+    background: #5268dc;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.card-button:hover {
+    background: #3d50b8;
+}
+
+.detail-container {
+    max-width: 850px;
+    margin: 30px auto;
+}
+
+.detail-header {
+    padding: 28px 0;
+}
+
+.detail-header h1 {
+    font-size: 32px;
+}
+
+.detail-header > p:last-child {
+    color: #666;
+    line-height: 1.7;
+}
+
+.detail-card {
+    margin: 20px 0;
+}
+
+.detail-card h2 {
+    font-size: 20px;
+    margin-top: 0;
+}
+
+.large-formula {
+    font-size: 26px;
+    margin: 20px 0;
+}
+
+.detail-list {
+    line-height: 2;
+    color: #555;
+}
+
+/* ==========================================
+   PHYSICS QUIZ
+========================================== */
+
+.quiz-container {
+    max-width: 750px;
+    margin: 35px auto;
+    color: #f8fafc;
+}
+
+.quiz-header {
+    display: block !important;
+    text-align: center;
+    margin-bottom: 30px;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.quiz-header h1,
+.quiz-header h2,
+.quiz-header p {
+    color: #f8fafc !important;
+}
+
+.quiz-header h2 {
+    display: block !important;
+    visibility: visible !important;
+}
+
+.quiz-progress {
+    margin-bottom: 20px;
+    color: #f8fafc !important;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.progress-info span {
+    color: #cbd5e1 !important;
+}
+
+.progress-track {
+    height: 9px;
+    background: #e5e7ef;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: #5268dc;
+    transition: width 0.3s ease;
+}
+
+/* Question Card */
+
+.quiz-card {
+    display: block;
+    background: #1e293b !important;
+    color: #f8fafc !important;
+    border: 1px solid #475569 !important;
+    padding: 30px !important;
+    border-radius: 15px;
+}
+
+.quiz-card h2,
+#question-text {
+    color: #f8fafc !important;
+    background: transparent !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+    font-size: 21px;
+    line-height: 1.6;
+    margin: 25px 0;
+}
+
+.question-meta {
+    display: flex;
+    justify-content: space-between;
+    color: #93c5fd !important;
+    font-size: 13px;
+}
+
+.question-meta span {
+    color: #93c5fd !important;
+}
+
+/* Answer Options */
+
+.options-container {
+    display: grid !important;
+    gap: 12px;
+    margin: 25px 0;
+}
+
+.option-button {
+    display: block !important;
+    width: 100% !important;
+    padding: 16px !important;
+    margin: 0 !important;
+    background: #334155 !important;
+    color: #ffffff !important;
+    border: 1px solid #64748b !important;
+    border-radius: 9px !important;
+    text-align: left !important;
+    cursor: pointer;
+    font-size: 15px;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.option-button:hover:not(:disabled) {
+    background: #475569 !important;
+    border-color: #93c5fd;
+}
+
+.option-button:disabled {
+    cursor: default;
+}
+
+.option-button.correct {
+    background: #166534 !important;
+    color: #ffffff !important;
+    border-color: #22c55e;
+}
+
+.option-button.incorrect {
+    background: #991b1b !important;
+    color: #ffffff !important;
+    border-color: #ef4444;
+}
+
+/* Answer Feedback */
+
+.feedback {
+    color: #f8fafc !important;
+    margin: 15px 0;
+    line-height: 1.6;
+}
+
+.feedback.correct {
+    color: #22c55e !important;
+}
+
+.feedback.incorrect {
+    color: #f87171 !important;
+}
+
+/* Next Button */
+
+#next-button {
+    color: #ffffff !important;
+}
+
+#next-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ==========================================
+   QUIZ RESULT CARD
+========================================== */
+
+.result-card {
+    text-align: center;
+    margin-top: 25px;
+    background: #1e293b !important;
+    color: #f8fafc !important;
+    border: 1px solid #475569;
+}
+
+#result-card[hidden] {
+    display: none !important;
+}
+
+#result-card:not([hidden]) {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.result-card h2,
+.result-card h3,
+.result-card p {
+    color: #f8fafc;
+}
+
+.score-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: #eef1ff;
+    color: #5268dc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 25px auto;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.result-card .back-link {
+    display: block;
+    margin-top: 22px;
+}
+
+/* ==========================================
+   DATABASE SAVE STATUS
+========================================== */
+
+.save-status {
+    margin: 15px 0;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+.save-status.success {
+    color: #22c55e !important;
+}
+
+.save-status.error {
+    color: #ef4444 !important;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+========================================== */
+
+@media (max-width: 600px) {
+
+    .library-header h1,
+    .quiz-header h1 {
+        font-size: 25px;
+    }
+
+    .practice-banner {
+        padding: 20px;
+    }
+
+    .detail-header h1 {
+        font-size: 26px;
+    }
+
+    .quiz-container {
+        margin: 20px 12px;
+    }
+
+    .quiz-card,
+    .detail-card,
+    .concept-card,
+    .result-card {
+        padding: 18px !important;
+    }
+
+    .quiz-card h2,
+    #question-text {
+        font-size: 18px;
+    }
+
+    .option-button {
+        padding: 14px !important;
+    }
+}

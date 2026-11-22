@@ -1,0 +1,85 @@
+
+{% extends "base.html" %}
+
+{% block title %}Physics Practice | LearnPilot AI{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/concept_library.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<section class="quiz-container">
+
+   <div class="quiz-header">
+    <p class="eyebrow">TEST YOUR KNOWLEDGE</p>
+
+    <h1>Physics Practice Test 📝</h1>
+
+    <h2>Ready to test your knowledge?</h2>
+
+    <p>Chapter: Electricity | Class: 10</p>
+</div>
+
+    <div class="quiz-progress">
+        <div class="progress-info">
+            <span id="question-counter">Question 1</span>
+            <span id="progress-text">0% Completed</span>
+        </div>
+
+        <div class="progress-track">
+            <div id="progress-bar" class="progress-bar"></div>
+        </div>
+    </div>
+
+    <div id="quiz-card" class="quiz-card">
+
+        <div class="question-meta">
+            <span id="question-difficulty"></span>
+            <span>1 Mark</span>
+        </div>
+
+        <h2 id="question-text">Loading question...</h2>
+
+        <div id="options-container" class="options-container"></div>
+
+        <div id="feedback" class="feedback" aria-live="polite"></div>
+
+        <button id="next-button" class="card-button" disabled>
+            Next Question →
+        </button>
+
+    </div>
+
+    <div id="result-card" class="result-card" hidden>
+        <h2>🎉 Practice Completed!</h2>
+
+        <div class="score-circle">
+            <span id="final-score">0/0</span>
+        </div>
+
+        <h3 id="result-message"></h3>
+
+        <p id="result-percentage"></p>
+
+        <button id="restart-button" class="card-button">
+            Try Again
+        </button>
+
+        <a href="{{ url_for('physics_library') }}" class="back-link">
+            Explore Physics Concepts →
+        </a>
+    </div>
+
+</section>
+
+<script id="question-data" type="application/json">
+    {{ question_data.questions | tojson }}
+</script>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/concept_library.js') }}" defer></script>
+{% endblock %}

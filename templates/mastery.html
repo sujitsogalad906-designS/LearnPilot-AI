@@ -1,0 +1,200 @@
+
+{% extends "base.html" %}
+
+{% block title %}My Mastery | LearnPilot AI{% endblock %}
+
+{% block content %}
+
+<div class="mastery-page">
+
+    <div class="mastery-header">
+        <h1>🎯 My Learning Mastery</h1>
+        <p>Welcome, {{ student.name }}! Track your progress and improve your understanding.</p>
+    </div>
+
+    <!-- Overall Progress -->
+    <div class="mastery-overview">
+
+        <div class="mastery-card overall-card">
+            <h3>Overall Mastery</h3>
+            <div class="mastery-percentage">
+                {{ overall_mastery }}%
+            </div>
+            <div class="mastery-progress">
+                <div class="mastery-progress-fill"
+                     style="width: {{ overall_mastery }}%;">
+                </div>
+            </div>
+            <p>Your overall concept mastery</p>
+        </div>
+
+        <div class="mastery-card">
+            <h3>✅ Mastered Concepts</h3>
+            <div class="mastery-number">{{ mastered_count }}</div>
+            <p>Concepts you understand well</p>
+        </div>
+
+        <div class="mastery-card">
+            <h3>📈 In Progress</h3>
+            <div class="mastery-number">{{ improving_count }}</div>
+            <p>Concepts you are improving</p>
+        </div>
+
+        <div class="mastery-card">
+            <h3>⚠️ Needs Attention</h3>
+            <div class="mastery-number">{{ needs_attention_count }}</div>
+            <p>Concepts to practise more</p>
+        </div>
+
+    </div>
+
+    <!-- Concept Mastery -->
+    <section class="mastery-section">
+        <h2>📚 Concept-wise Progress</h2>
+
+        {% if mastery_items %}
+
+            {% for item in mastery_items %}
+
+                <div class="concept-mastery-card">
+
+                    <div class="concept-mastery-info">
+                        <strong>{{ item.concept_name }}</strong>
+                        <span>{{ item.score }}%</span>
+                    </div>
+
+                    <div class="mastery-progress">
+                        <div class="mastery-progress-fill"
+                             style="width: {{ item.score }}%;">
+                        </div>
+                    </div>
+
+                    <small>{{ item.level.replace('_', ' ')|title }}</small>
+
+                </div>
+
+            {% endfor %}
+
+        {% else %}
+
+            <div class="mastery-empty">
+                <h3>No mastery records yet</h3>
+                <p>Start learning Physics concepts and complete practice activities to build your mastery profile.</p>
+                <a href="{{ url_for('physics_library') }}" class="card-button">
+                    Explore Physics Concepts →
+                </a>
+            </div>
+
+        {% endif %}
+    </section>
+
+    <!-- Quiz Performance -->
+    <section class="mastery-section">
+        <h2>📝 Quiz Performance</h2>
+
+        <div class="mastery-card quiz-summary">
+            <h3>Average Recent Quiz Score</h3>
+            <div class="mastery-number">{{ average_quiz_score }}%</div>
+            <p>Based on your latest {{ quiz_results|length }} quiz attempts</p>
+        </div>
+
+        {% if quiz_results %}
+
+            <div class="mastery-table-wrapper">
+                <table class="mastery-table">
+                    <thead>
+                        <tr>
+                            <th>Score</th>
+                            <th>Percentage</th>
+                            <th>Performance</th>
+                            <th>Completed</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for result in quiz_results %}
+                            <tr>
+                                <td>{{ result.score }}/{{ result.total_questions }}</td>
+                                <td>{{ result.percentage }}%</td>
+                                <td>{{ result.performance }}</td>
+                                <td>
+                                    {{ result.completed_at.strftime('%d-%m-%Y') if result.completed_at else 'N/A' }}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+        {% else %}
+
+            <p class="mastery-empty">No quiz results available yet. Complete a Physics practice test to see your results.</p>
+
+        {% endif %}
+    </section>
+
+    <!-- Misconceptions -->
+    <section class="mastery-section">
+        <h2>💡 Concepts to Understand Better</h2>
+
+        {% if misconceptions %}
+
+            {% for item in misconceptions %}
+                <div class="mastery-list-card">
+                    {{ item.description }}
+                </div>
+            {% endfor %}
+
+        {% else %}
+
+            <p class="mastery-empty">
+                No unresolved misconceptions recorded.
+            </p>
+
+        {% endif %}
+    </section>
+
+    <!-- Revision Tasks -->
+    <section class="mastery-section">
+        <h2>🔄 Pending Revision Tasks</h2>
+
+        {% if revision_tasks %}
+
+            {% for task in revision_tasks %}
+                <div class="mastery-list-card">
+                    <strong>
+                        {% if task.concept %}
+                            {{ task.concept.name }}
+                        {% else %}
+                            Concept revision
+                        {% endif %}
+                    </strong>
+
+                    <span>
+                        {{ task.revision_date.strftime('%d-%m-%Y') }}
+                    </span>
+                </div>
+            {% endfor %}
+
+        {% else %}
+
+            <p class="mastery-empty">
+                No pending revision tasks.
+            </p>
+
+        {% endif %}
+    </section>
+
+    <div class="mastery-actions">
+        <a href="{{ url_for('dashboard') }}" class="card-button">
+            ← Back to Dashboard
+        </a>
+
+        <a href="{{ url_for('physics_questions') }}" class="card-button">
+            Practice Questions →
+        </a>
+    </div>
+
+</div>
+
+{% endblock %}

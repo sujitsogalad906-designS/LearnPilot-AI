@@ -1,0 +1,57 @@
+
+{% extends "base.html" %}
+
+{% block title %}Student Dashboard | LearnPilot AI{% endblock %}
+
+{% block content %}
+
+<div class="dashboard-header">
+    <h1>Hello, {{ student.name }}! 👋</h1>
+    <p>Welcome to your personalized learning dashboard.</p>
+</div>
+
+<div class="dashboard-grid">
+
+    <div class="dashboard-card">
+        <h2>📚 Physics Library</h2>
+        <p>Explore Physics concepts, formulas, examples and explanations.</p>
+        <a href="{{ url_for('physics_library') }}" class="card-button">
+            Explore Concepts →
+        </a>
+    </div>
+
+    <div class="dashboard-card">
+        <h2>📝 Practice Questions</h2>
+        <p>Test your knowledge with 20 Physics multiple-choice questions.</p>
+        <a href="{{ url_for('physics_questions') }}" class="card-button">
+            Start Practice →
+        </a>
+    </div>
+
+    <div class="dashboard-card">
+        <h2>🎯 My Mastery</h2>
+        <p>Understand your learning progress and identify concepts to improve.</p>
+        <a href="{{ url_for('my_mastery') }}" class="card-button">
+            View My Mastery →
+        </a>
+    </div>
+
+    <div class="dashboard-card">
+        <h2>🔄 Revision Schedule</h2>
+        <p>Revise important concepts and strengthen your understanding.</p>
+        <a href="{{ url_for('revision_schedule') }}" class="card-button">
+            View Revision Schedule →
+        </a>
+    </div>
+
+</div>
+
+<div class="profile-card">
+    <h3>Student Profile</h3>
+
+    <p><strong>Name:</strong> {{ student.name }}</p>
+    <p><strong>Email:</strong> {{ student.email }}</p>
+    <p><strong>Account Type:</strong> {{ student.role }}</p>
+</div>
+
+{% endblock %}
